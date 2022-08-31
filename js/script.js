@@ -23,6 +23,11 @@ let displayContrirs = contries => {
     }
 }
 
+
+fetch('https://restcountries.com/v3.1/all')
+.then(res => res.json())
+.then(data => displaymodal(data));
+
 let displaymodal = contries => {
     for (const country of contries) {
         // console.log(country)
@@ -69,7 +74,7 @@ function clock() {
     if (h === 0) {
         h = 12;
     }
-    else {
+   if(h > 12) {
         h = h - 12;
         am_pm = "PM"
     }
